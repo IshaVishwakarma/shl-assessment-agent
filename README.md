@@ -5,7 +5,7 @@
 **Production-grade conversational AI for SHL assessment shortlisting**
 *No keyword search. No hallucinations. Just dialogue → grounded recommendations.*
 
-[![Live](https://img.shields.io/badge/status-live-brightgreen?style=flat-square)](https://your-render-url.onrender.com/health)
+[![Live](https://img.shields.io/badge/status-live-brightgreen?style=flat-square)](https://shl-assessment-agent-mn4p.onrender.com/health)
 [![FastAPI](https://img.shields.io/badge/FastAPI-async-009688?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com)
 [![Groq](https://img.shields.io/badge/LLM-Groq%20Llama%203.1%208B-orange?style=flat-square)](https://groq.com)
 [![ChromaDB](https://img.shields.io/badge/Vector%20Store-ChromaDB-blueviolet?style=flat-square)](https://www.trychroma.com)
