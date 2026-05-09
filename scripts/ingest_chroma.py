@@ -5,6 +5,9 @@ import cohere
 from app.core.config import COHERE_API_KEY
 
 
+def ingest_data():
+
+
 # -----------------------------
 # LOAD ENRICHED CATALOG
 # -----------------------------
@@ -103,3 +106,7 @@ collection.add(
 
 print("\nChroma ingestion complete.")
 print(f"Inserted records: {len(ids)}")
+
+if __name__ == "__main__":
+
+    ingest_data()

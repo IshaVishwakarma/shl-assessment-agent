@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from contextlib import asynccontextmanager
 
 from app.models.schemas import (
     ChatRequest,
@@ -7,9 +8,40 @@ from app.models.schemas import (
 
 from app.services.orchestrator import process_chat
 
+from scripts.ingest_chroma import ingest_data
+
+
+# -----------------------------
+# APP STARTUP
+# -----------------------------
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+
+    try:
+
+        ingest_data()
+
+        print(
+            "Chroma ingestion complete."
+        )
+
+    except Exception as e:
+
+        print(
+            f"Ingestion skipped: {e}"
+        )
+
+    yield
+
+
+# -----------------------------
+# FASTAPI APP
+# -----------------------------
 
 app = FastAPI(
-    title="SHL Assessment Recommender"
+    title="SHL Assessment Recommender",
+    lifespan=lifespan
 )
 
 
@@ -37,7 +69,10 @@ async def health():
 async def chat(request: ChatRequest):
 
     response = process_chat(
-        [msg.dict() for msg in request.messages]
+        [
+            msg.dict()
+            for msg in request.messages
+        ]
     )
 
     return response

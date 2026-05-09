@@ -14,9 +14,24 @@ client = chromadb.PersistentClient(
     path="./db/chroma"
 )
 
-collection = client.get_collection(
+"""collection = client.get_collection(
     name="shl_catalog"
-)
+)"""
+# -----------------------------
+# SAFE COLLECTION INIT
+# -----------------------------
+
+try:
+
+    collection = client.get_collection(
+        name="shl_catalog"
+    )
+
+except Exception:
+
+    collection = client.create_collection(
+        name="shl_catalog"
+    )
 # -----------------------------
 # DOMAIN BOOSTS
 # -----------------------------
