@@ -6,12 +6,16 @@ from app.services.conversation import extract_context
 # -----------------------------
 
 OFF_TOPIC_TERMS = [
-    "salary negotiation",
-    "hiring law",
-    "legal advice",
-    "fire employee",
+    "salary",
+    "legal",
+    "law",
+    "lawsuit",
     "tax",
-    "politics"
+    "politics",
+    "fire employee",
+    "termination",
+    "visa",
+    "immigration"
 ]
 
 
