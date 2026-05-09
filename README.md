@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+chromadb
+cohere
+groq
+pydantic
+python-dotenv
+beautifulsoup4
+requests
+httpx
+numpy
+scikit-learn
+pytest
+loguru
